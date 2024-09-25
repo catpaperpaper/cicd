@@ -11,7 +11,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [18.x]
+        node-version: [21.x]
 
     steps:
       - name: Checkout Code
@@ -24,6 +24,7 @@ jobs:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
+          server-dir: /public_html/experiments/cicd/
           exclude: |
             **/.git**
             **/.git*/**
